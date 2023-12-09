@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Bugs from "./components/bugs";
+import configureStore from "./store/configureStore";
+import StoreContext from "./context/storeContext";
+import { Provider } from "react-redux";
+import BugsList from "./components/bugsList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const store = configureStore();
+	return (
+		<Provider store={store}>
+			<BugsList />
+		</Provider>
+	);
 }
 
 export default App;
