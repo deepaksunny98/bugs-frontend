@@ -10,7 +10,7 @@ function App() {
 	const store = configureStore();
 	return (
 		<Provider store={store}>
-			<BugsList />
+			<BugsList1 />
 		</Provider>
 	);
 }
